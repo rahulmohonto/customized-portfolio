@@ -24,8 +24,29 @@
 	<script src="js/typed.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="js/contact.js">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function () {
+			// https://dashboard.emailjs.com/admin/integration
+			emailjs.init('user_ktBBG3kmWwHAVHbd1y3Pz');
+		})();
+
+		function sendmail() {
+			let fullName = document.getElementById("fullname").value;
+			let userEmail = document.getElementById("email").value;
+			let userMessage = document.getElementById("message").value;
+
+			var contactParams = {
+				from_name: fullName,
+				from_Email: userEmail,
+				message: userMessage
+			};
+			emailjs.send('service_brpql3f', 'template_se3cumu', contactParams).then(function (res) {})
+		}
 	</script>
+
+
+
 </head>
 
 <body id="top">
@@ -105,7 +126,7 @@
 						<div class="sub-element">Download My Resume Or See My Work</div>
 					</div>
 					<a data-scroll
-						href="https://drive.google.com/file/d/1DQAZk8J7L4upDo4oeQOlQYDNCCV5rF62/view?usp=sharing"
+						href="https://drive.google.com/uc?export=download&id=1DQAZk8J7L4upDo4oeQOlQYDNCCV5rF62"
 						class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">Get Resume</a>
 					<a data-scroll href="#projects" class="btn btn-default wow fadeInUp" data-wow-offset="50"
 						data-wow-delay="0.6s">See My Work</a>
@@ -351,7 +372,7 @@
 				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
 					<!-- <img src="./images/foodMart.jpg" class="img-fluid"></img> -->
 
-					<div class="card mx-3 my-3" style="width: 18rem;">
+					<div class="card" style="width: 20rem; height:36rem">
 						<img src="images/block.jpg" class="card-img-top" alt="/" />
 						<div class="card-body">
 							<h3 class="card-title text-center">Know About JavaScript ES6</h3>
@@ -366,16 +387,16 @@
 
 
 				</div>
-				<div class="col-md-4 active wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">
+				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">
 
-					<div class="card mx-3 my-3" style="width: 18rem;">
+					<div class="card" style="width: 20rem;height:36rem">
 						<img src="images/const.png" class="card-img-top" alt="/" />
-						<div class="card-body card-main-body text-center>
-							<h3 class=" card-title text-center">10 Things In JavaScript </h3>
-							<p class="card-text text-justify">
+						<div class="card-body card-main-body text-center">
+							<h3 card-title text-center>10 Things In JavaScript </h3>
+							<p class=" card-text text-justify">
 								charAt is a method to access string at a specific index position. it reveals the
 								character at that position of the string.it is written as chaAt(index of that string).
-								ex. var one = ‘we are one’; one.charAt(5); output is e.</p>
+							</p>
 							<a target="_blank"
 								href="https://rahulmohonto1999.medium.com/10-things-in-javascript-ee1689641716"
 								class="btn btn-primary">See Details</a>
@@ -402,7 +423,7 @@
 					</h2>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
-					<form onSubmit={sendMeEmail} action="#" method="post">
+					<form id="contact-form" action="#" method="post">
 						<label>NAME</label>
 						<input name="fullname" type="text" class="form-control" id="fullname">
 
@@ -412,7 +433,8 @@
 						<label>MESSAGE</label>
 						<textarea name="message" rows="4" class="form-control" id="message"></textarea>
 
-						<input type="submit" value="send" class="form-control">
+						<button onclick="sendmail()" type="button" class="btn btn-primary" value="send"
+							class="form-control">send</button>
 					</form>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">

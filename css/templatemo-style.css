@@ -247,6 +247,12 @@ header .social-icon li a
 /* end home */
 
 /* start about */
+#about{
+	background-image: url(../images/wp6784383.jpg);
+	opacity: .8;
+	color:rgb(255, 255, 255);
+	
+}
 #about .media-heading-wrapper
 	{
 		padding-bottom: 32px;
@@ -261,6 +267,8 @@ header .social-icon li a
 		margin-right: auto;
 	}
 	#about .media-heading-wrapper .media-object img{
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		object-fit: cover;
 		height:100%;
 		width:100%;
 	}
@@ -283,6 +291,10 @@ header .social-icon li a
 		font-weight: bold;
 		padding-top: 20px;
 		padding-left: 52px;
+	}
+	#about .media .media-object img{
+		box-sizing: border-box;
+		object-fit: cover;
 	}
 	.btn-skill{
 		background-image: linear-gradient(to right, rgb(247, 94, 77), rgb(177, 90, 90), darkslategrey);

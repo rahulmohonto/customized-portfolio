@@ -327,7 +327,7 @@ header .social-icon li a
 		/* transition: all .85s cubic-bezier(.25,.98,.55,22); */
 	}
 	#projects .team-wrapper img{
-		height:300px;
+		height:220px;
 		width:100%;
 	}
 #projects .team-wrapper:hover
@@ -341,7 +341,7 @@ header .social-icon li a
 #projects .team-wrapper .team-des
 	{
 		padding: 20px;
-		height:200px;
+		height:180px;
 	}
 #projects .team-wrapper .team-des span
 	{
